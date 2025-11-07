@@ -898,5 +898,8 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: \
   /opt/homebrew/include/SFML/System/MemoryInputStream.hpp \
   /opt/homebrew/include/SFML/System/Sleep.hpp \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/GameManager.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/CollisionSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/InputSystem.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/MovementSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Platform.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/RenderSystem.h

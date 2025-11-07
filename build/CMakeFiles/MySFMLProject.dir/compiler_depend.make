@@ -820,9 +820,12 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: /Users/mohamedazizgannar/Projects/P
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdint.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Character.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/CollisionSystem.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Components.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/GameManager.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/InputSystem.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/MovementSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Platform.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/RenderSystem.h \
   /opt/homebrew/include/SFML/Config.hpp \
   /opt/homebrew/include/SFML/Graphics.hpp \
@@ -1001,6 +1004,8 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: /Users/mohamedazizgannar/Projects/P
 /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/GameManager.h:
 
 /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Components.h:
+
+/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/CollisionSystem.h:
 
 /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Character.h:
 
@@ -1367,6 +1372,8 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: /Users/mohamedazizgannar/Projects/P
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/void_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/underlying_type.h:
+
+/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/InputSystem.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility:
 
@@ -1823,6 +1830,8 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: /Users/mohamedazizgannar/Projects/P
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/distance.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_entry.h:
+
+/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Platform.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/move_sentinel.h:
 
