@@ -1,0 +1,29 @@
+{
+	"animations":{
+		"idle":{
+			"texture":"../assets/Sprites/IDLE.jpg",
+			"frameCount":10,
+			"frameDuration":0.02,
+			"frameHeight":96,
+			"frameWidth":96,
+			"rowIndex":0
+		},
+		"run":{
+			"texture" : "../assets/Sprites/RUN.jpg",
+			"frameCount" : 16,
+			"frameDuration" : 0.02,
+			"frameHeight" : 96,
+			"frameWidth" : 96,
+			"rowIndex" : 0
+		},
+		"attack":{
+			"texture" : "../assets/Sprites/ATTACK 1.jpg",
+			"frameCount" : 7,
+			"frameDuration" : 0.02,
+			"frameHeight" : 96,
+			"frameWidth" : 96,
+			"rowIndex" : 0
+		}
+
+	}
+}

@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/build",
+  "command": "/usr/bin/c++  -I/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include -I\"/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/(\" -I\"/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/)\" -isystem /opt/homebrew/include -std=c++17 -arch arm64 -Wall -Wextra -Wpedantic -o CMakeFiles/MySFMLProject.dir/src/main.cpp.o -c /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/src/main.cpp",
+  "file": "/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/src/main.cpp",
+  "output": "CMakeFiles/MySFMLProject.dir/src/main.cpp.o"
+}
+]
