@@ -56,11 +56,10 @@ struct Health {
 };
 struct Shape {
   sf::RectangleShape shape;
-  float radius;
   Shape(sf::Color color, float x = 10.f, float y = 50.f) {
+    shape.setOrigin({x / 2.f ,y /2.f});
     shape.setSize({x, y});
     shape.setFillColor(color);
-    shape.setOrigin(sf::Vector2f(radius, radius));
   }
   void render(sf::RenderWindow &window) { window.draw(shape); }
 };
@@ -72,8 +71,17 @@ struct Collider {
       : width(x), height(y), isStatic(isStatic) {}
   sf::FloatRect getBounds(const Transform &transform) {
     return sf::FloatRect(
-        {transform.x - width / 2.f, transform.y - height / 2.f},
+        {transform.x - width/2.f , transform.y - height/ 2.f},
         {width, height});
+  }
+  void debugRender(sf::RenderWindow &window, const Transform &transform) const {
+    sf::RectangleShape debugShape(sf::Vector2f(width, height));
+    debugShape.setPosition(
+        {transform.x - width/2.f , transform.y - height /2.f });
+    debugShape.setFillColor(sf::Color::Transparent);
+    debugShape.setOutlineColor(sf::Color::Green);
+    debugShape.setOutlineThickness(2.f);
+    window.draw(debugShape);
   }
 };
 struct CollisionInfo {

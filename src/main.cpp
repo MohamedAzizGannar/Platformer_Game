@@ -7,9 +7,10 @@ const unsigned int WINDOW_HEIGHT = 800;
 int main() {
   GameManager gameManager(WINDOW_WIDTH, WINDOW_HEIGHT);
   gameManager.addCharacter(
-    std::make_unique<Character>(WINDOW_WIDTH/2.f,0.f, 100.f)
+    std::make_unique<Character>(WINDOW_WIDTH/2.f,0.f,20.f,50.f, 100.f)
   );
-  gameManager.addPlatform( std::make_unique<Platform>(WINDOW_WIDTH/2.f,WINDOW_HEIGHT * 0.8f,WINDOW_WIDTH, WINDOW_HEIGHT * 0.5f));
+  gameManager.addPlatform( std::make_unique<Platform>(0,WINDOW_HEIGHT * 0.8f,WINDOW_WIDTH/2.f, WINDOW_HEIGHT * 0.5f,true));
+  gameManager.addPlatform( std::make_unique<Platform>(WINDOW_WIDTH*0.5f,WINDOW_HEIGHT * 0.8f,WINDOW_WIDTH/2.f, WINDOW_HEIGHT * 0.6f, true));
   gameManager.run();
 
   return 0;

@@ -10,8 +10,8 @@ public:
     auto& velocity = character.getVelocity();
     transform.translate(velocity.toVector().x * dt, velocity.toVector().y * dt);
   }
-  void addGravity(Character& character,float gravity, float dt){
-    character.getTransform().translate(0,gravity*dt);
+  void addGravity(Character& character,float gravity ){
+    character.getVelocity().accelerate(0,gravity);
 
   }
   sf::Vector2f predictPosition(Character& character, float dt){

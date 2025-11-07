@@ -9,15 +9,17 @@
 #include <SFML/Window/ContextSettings.hpp>
 #include <vector>
 
-const float PLAYER_SPEED = 500.f;
-const float JUMP_SPEED = 750.f;
-const float GRAVITY = 100.f;
+const float PLAYER_SPEED = 300.f;
+const float JUMP_SPEED = 450.f;
+const float JUMP_COOLDOWN = .3f;
+const float GRAVITY = 12.f;
 class GameManager {
 private:
   sf::ContextSettings contextSettings;
   sf::Clock clock;
   sf::RenderWindow window;
 
+  float currentTime =0.f;
   std::vector<std::unique_ptr<Character>> characters;
   std::vector<std::unique_ptr<Platform>> platforms;
   CollisionSystem collisionSystem;
@@ -32,9 +34,8 @@ public:
     inputSystem.trackKey(sf::Keyboard::Key::D);
     inputSystem.trackKey(sf::Keyboard::Key::Left);
     inputSystem.trackKey(sf::Keyboard::Key::Right);
-    inputSystem.trackKey(sf::Keyboard::Key::W);
-    inputSystem.trackKey(sf::Keyboard::Key::Up);
-    inputSystem.trackKey(sf::Keyboard::Key::Down);
+    inputSystem.trackKey(sf::Keyboard::Key::Space);
+
     window.setFramerateLimit(60);
   }
   void addCharacter(std::unique_ptr<Character> character) {
@@ -45,22 +46,29 @@ public:
   }
   void update(float dt) {
     for (auto &character : characters) {
-      movementSystem.addGravity(*character, GRAVITY,dt);
       movementSystem.update(*character, dt);
+      bool isGrounded = false;
       for (auto &platform : platforms) {
-        auto info = collisionSystem.checkCollisions(
-            character->getCollider(), character->getTransform(),
-            platform->getCollider(), platform->getTransform());
-        if (info.isCollided) {
-          printf("Collision Normal = %.2f %.2f Overlay = %.2f \n", info.normal.x, info.normal.y, info.overlay);
-          Velocity zeroes(0.f, 0.f);
-          collisionSystem.ResolveCollisions(
-              character->getTransform(), character->getVelocity(),
-              character->getCollider(), platform->getTransform(), zeroes,
-              platform->getCollider(), info);
+        if (platform->getIsGround()) {
+          auto info = collisionSystem.checkCollisions(
+              character->getCollider(), character->getTransform(),
+              platform->getCollider(), platform->getTransform());
+          if (info.isCollided) {
+            Velocity zeroes(0.f, 0.f);
+            collisionSystem.ResolveCollisions(
+                character->getTransform(), character->getVelocity(),
+                character->getCollider(), platform->getTransform(), zeroes,
+                platform->getCollider(), info);
+            if (collisionSystem.isGrounded(
+                    character->getTransform(), character->getCollider(),
+                    platform->getTransform(), platform->getCollider()))
+              isGrounded = true;
+          }
+          character->setGrounded(isGrounded);
+          if (!character->getIsGrounded())
+            movementSystem.addGravity(*character, GRAVITY);
         }
       }
-
     }
   }
   void render() {
@@ -94,14 +102,16 @@ public:
       float horizontalInput = inputSystem.getAxisX();
       player->getVelocity().x = horizontalInput * PLAYER_SPEED;
 
-      float verticalInput = inputSystem.getAxisY();
-      player->getVelocity().y = verticalInput * JUMP_SPEED;
+      if (inputSystem.jumpPressed() && (currentTime - player->getLastJumpTime() >JUMP_COOLDOWN ) && player->getIsGrounded()) {
+        player->getVelocity().y -= JUMP_SPEED;
+        player->setLastJumpTime(currentTime);
+      }
     }
   }
   void run() {
     while (window.isOpen()) {
       float dt = clock.restart().asSeconds();
-      dt = std::min(0.05f,dt);
+      currentTime += dt;
       handleEvents();
       handleInputs();
       update(dt);

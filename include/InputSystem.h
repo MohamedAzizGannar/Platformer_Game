@@ -21,9 +21,9 @@ public:
   }
   bool isKeyHeld(sf::Keyboard::Key key) {
     auto it = currentKeyState.find(key);
-    if (it != currentKeyState.end() && it->second){
+    if (it != currentKeyState.end() && it->second) {
     }
-      return it != currentKeyState.end() && it->second;
+    return it != currentKeyState.end() && it->second;
   }
   bool isKeyPressed(sf::Keyboard::Key key) {
     auto current = currentKeyState.find(key);
@@ -66,5 +66,8 @@ public:
       axis -= 1.f;
     }
     return axis;
+  }
+  bool jumpPressed() {
+    return sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space);
   }
 };

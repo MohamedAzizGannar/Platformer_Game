@@ -54,12 +54,12 @@ public:
       moveRatio1 = 0.5f;
       moveRatio2 = 0.5f;
     }
-    float separationOffset = 1.f;
+    float separationOffset = .2f;
     float separationDistance = info.overlay + separationOffset;
-    transform1.translate(-info.normal.x * separationDistance * moveRatio1,
-                         -info.normal.y * separationDistance * moveRatio1);
-    transform2.translate(info.normal.x * separationDistance * moveRatio2,
-                         info.normal.y * separationDistance * moveRatio2);
+    transform1.translate(info.normal.x * separationDistance * moveRatio1,
+                         info.normal.y * separationDistance * moveRatio1);
+    transform2.translate(-info.normal.x * separationDistance * moveRatio2,
+                         -info.normal.y * separationDistance * moveRatio2);
 
     float relativeVelX = vel1.toVector().x - vel2.toVector().x;
     float relativeVelY = vel1.toVector().y - vel2.toVector().y;
@@ -84,5 +84,18 @@ public:
         }
       }
     }
+  }
+  bool isGrounded(Transform &transform, Collider &collider,
+                  Transform &platformTransform, Collider &platformCollider) {
+    auto cBounds = collider.getBounds(transform);
+    auto pBounds = platformCollider.getBounds(platformTransform);
+
+    auto cCenterX = transform.toVector().x;
+
+    float cBottom = cBounds.position.y + cBounds.size.y;
+    float pTop = pBounds.position.y;
+    float distance = std::abs(cBottom - pTop);
+    
+    return distance < 5.f && (cCenterX >= pBounds.position.x) &&( cCenterX <= pBounds.position.x + pBounds.size.x);
   }
 };
