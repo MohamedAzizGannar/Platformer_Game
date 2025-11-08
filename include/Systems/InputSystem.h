@@ -6,11 +6,19 @@ private:
   std::unordered_map<sf::Keyboard::Key, bool> currentKeyState;
   std::unordered_map<sf::Keyboard::Key, bool> previousKeyState;
 
+  std::unordered_map<sf::Keyboard::Key, sf::Time> lastTimePressed;
+  sf::Clock clock;
+  sf::Time doublePressThreshold = sf::milliseconds(300);
+
 public:
   void update() {
     previousKeyState = currentKeyState;
     for (auto &[key, state] : currentKeyState) {
       state = sf::Keyboard::isKeyPressed(key);
+
+      if (isKeyPressed(key)) {
+        lastTimePressed[key] = clock.getElapsedTime();
+      }
     }
   }
   void trackKey(sf::Keyboard::Key key) {
@@ -19,15 +27,13 @@ public:
       previousKeyState[key] = false;
     }
   }
-  bool isKeyHeld(sf::Keyboard::Key key) {
+  bool isKeyHeld(sf::Keyboard::Key key) const {
     auto it = currentKeyState.find(key);
-    if (it != currentKeyState.end() && it->second) {
-    }
     return it != currentKeyState.end() && it->second;
   }
-  bool isKeyPressed(sf::Keyboard::Key key) {
+  bool isKeyPressed(sf::Keyboard::Key key) const {
     auto current = currentKeyState.find(key);
-    auto previous = currentKeyState.find(key);
+    auto previous = previousKeyState.find(key);
 
     if (current == currentKeyState.end())
       return false;
@@ -35,11 +41,11 @@ public:
     bool currentlyPressed = current->second;
     bool previouslyPressed =
         (previous != previousKeyState.end()) && previous->second;
-    return currentlyPressed && previouslyPressed;
+    return currentlyPressed && !previouslyPressed;
   }
-  bool isKeyReleased(sf::Keyboard::Key key) {
+  bool isKeyReleased(sf::Keyboard::Key key) const {
     auto current = currentKeyState.find(key);
-    auto previous = currentKeyState.find(key);
+    auto previous = previousKeyState.find(key);
 
     if (previous == previousKeyState.end())
       return false;
@@ -49,7 +55,22 @@ public:
         (previous != previousKeyState.end()) && previous->second;
     return !currentlyPressed && previouslyPressed;
   }
-  float getAxisX() {
+  bool isKeyDoublePressed(sf::Keyboard::Key key) {
+    if (isKeyPressed(key)) {
+      sf::Time now = clock.getElapsedTime();
+      sf::Time last = lastTimePressed[key];
+      if (last != sf::Time::Zero && (now - last) <= doublePressThreshold) {
+        lastTimePressed[key] =
+            sf::Time::Zero; // reset to avoid triple-detection
+        return true;
+      } else {
+        lastTimePressed[key] =
+            now; // first press or too slow → start new timing
+      }
+    }
+    return false;
+  }
+  float getAxisX() const {
     float axis = 0.f;
     if (isKeyHeld(sf::Keyboard::Key::A) ||
         isKeyHeld(sf::Keyboard::Key::Right)) {
@@ -60,14 +81,12 @@ public:
     }
     return axis;
   }
-  float getAxisY() {
+  float getAxisY() const {
     float axis = 0.f;
     if (isKeyHeld(sf::Keyboard::Key::W) || isKeyHeld(sf::Keyboard::Key::Up)) {
       axis -= 1.f;
     }
     return axis;
   }
-  bool jumpPressed() {
-    return sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space);
-  }
+  bool jumpPressed() const { return isKeyPressed(sf::Keyboard::Key::Space); }
 };

@@ -1,17 +1,28 @@
-#include <Character.h>
+#include <Entity.h>
+
 #include <GameManager.h>
-#include<Platform.h>
 #include <SFML/Graphics.hpp>
 const unsigned int WINDOW_WIDTH = 1200;
 const unsigned int WINDOW_HEIGHT = 800;
 int main() {
-  GameManager gameManager(WINDOW_WIDTH, WINDOW_HEIGHT);
-  gameManager.addCharacter(
-    std::make_unique<Character>(WINDOW_WIDTH/2.f,0.f,20.f,50.f, 100.f)
-  );
-  gameManager.addPlatform( std::make_unique<Platform>(0,WINDOW_HEIGHT * 0.8f,WINDOW_WIDTH/2.f, WINDOW_HEIGHT * 0.5f,true));
-  gameManager.addPlatform( std::make_unique<Platform>(WINDOW_WIDTH*0.5f,WINDOW_HEIGHT * 0.8f,WINDOW_WIDTH/2.f, WINDOW_HEIGHT * 0.6f, true));
-  gameManager.run();
+  GameManager game(WINDOW_WIDTH,WINDOW_HEIGHT);
 
+  Entity player;
+  player.transform = Transform(WINDOW_WIDTH/2.f, WINDOW_HEIGHT/2.f);
+  player.velocity = Velocity(); 
+  player.movement = Movement();
+  player.jump = JumpComponent();
+  player.collider = Collider(20.f,50.f);
+  player.shape = Shape(sf::Color::Blue,20.f,50.f);
+
+  Entity platform;
+  platform.transform = Transform(900.f,900.f);
+  platform.collider = Collider(100.f,100.f,true);
+  platform.shape = Shape(sf::Color::Red, 100.f, 100.f);
+
+  game.addEntity(player);
+  game.addEntity(platform);
+  
+  game.run();
   return 0;
 }

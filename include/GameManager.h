@@ -1,27 +1,22 @@
 #pragma once
-#include <Character.h>
-#include <CollisionSystem.h>
-#include <InputSystem.h>
-#include <MovementSystem.h>
-#include <Platform.h>
-#include <RenderSystem.h>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/ContextSettings.hpp>
-#include <vector>
+#include <Systems/CollisionSystem.h>
+#include <Systems/InputSystem.h>
+#include <Systems/MovementSystem.h>
+#include <Systems/RenderSystem.h>
 
-const float PLAYER_SPEED = 300.f;
-const float JUMP_SPEED = 450.f;
-const float JUMP_COOLDOWN = .3f;
-const float GRAVITY = 12.f;
+#include <Entity.h>
+#include <vector>
 class GameManager {
 private:
   sf::ContextSettings contextSettings;
   sf::Clock clock;
   sf::RenderWindow window;
 
-  float currentTime =0.f;
-  std::vector<std::unique_ptr<Character>> characters;
-  std::vector<std::unique_ptr<Platform>> platforms;
+  std::vector<Entity> entities;
+
+  float currentTime = 0.f;
   CollisionSystem collisionSystem;
   InputSystem inputSystem;
   MovementSystem movementSystem;
@@ -35,49 +30,42 @@ public:
     inputSystem.trackKey(sf::Keyboard::Key::Left);
     inputSystem.trackKey(sf::Keyboard::Key::Right);
     inputSystem.trackKey(sf::Keyboard::Key::Space);
+    inputSystem.trackKey(sf::Keyboard::Key::LShift);
 
     window.setFramerateLimit(60);
   }
-  void addCharacter(std::unique_ptr<Character> character) {
-    characters.push_back(std::move(character));
-  }
-  void addPlatform(std::unique_ptr<Platform> platform) {
-    platforms.push_back(std::move(platform));
+  void addEntity(Entity &entity) {
+    entity.id = entities.size();
+    entities.push_back(entity);
   }
   void update(float dt) {
-    for (auto &character : characters) {
-      movementSystem.update(*character, dt);
-      bool isGrounded = false;
-      for (auto &platform : platforms) {
-        if (platform->getIsGround()) {
-          auto info = collisionSystem.checkCollisions(
-              character->getCollider(), character->getTransform(),
-              platform->getCollider(), platform->getTransform());
-          if (info.isCollided) {
-            Velocity zeroes(0.f, 0.f);
-            collisionSystem.ResolveCollisions(
-                character->getTransform(), character->getVelocity(),
-                character->getCollider(), platform->getTransform(), zeroes,
-                platform->getCollider(), info);
-            if (collisionSystem.isGrounded(
-                    character->getTransform(), character->getCollider(),
-                    platform->getTransform(), platform->getCollider()))
-              isGrounded = true;
-          }
-          character->setGrounded(isGrounded);
-          if (!character->getIsGrounded())
-            movementSystem.addGravity(*character, GRAVITY);
+    inputSystem.update();
+    for (auto &entity : entities) {
+      bool isStatic = entity.collider && entity.collider->isStatic;
+      if (!isStatic) {
+
+        movementSystem.update(entity, inputSystem, dt);
+        movementSystem.applyGravity(entity, dt);
+      }
+      for (auto &other : entities) {
+        if (other.id == entity.id)
+          continue;
+        CollisionInfo info = collisionSystem.checkCollisions(entity, other);
+        if (info.isCollided) {
+          collisionSystem.ResolveCollisions(entity, other, info);
         }
       }
+      entity.shape->shape.setPosition(
+          {entity.transform.value().x, entity.transform.value().y});
     }
   }
   void render() {
     window.clear(sf::Color::White);
-    for (auto &character : characters) {
-      renderSystem.renderCharacter(*character, window);
-    }
-    for (auto &platform : platforms) {
-      renderSystem.renderPlatform(*platform, window);
+    for (auto &entity : entities) {
+      printf("pos %f %f\n", entity.shape->shape.getPosition().x,
+             entity.shape->shape.getPosition().y);
+      renderSystem.render(entity, window);
+      printf("Rendered %i\n", entity.id);
     }
     window.display();
   }
@@ -93,27 +81,10 @@ public:
       }
     }
   }
-  void handleInputs() {
-    inputSystem.update();
-
-    if (!characters.empty()) {
-      auto &player = characters[0];
-
-      float horizontalInput = inputSystem.getAxisX();
-      player->getVelocity().x = horizontalInput * PLAYER_SPEED;
-
-      if (inputSystem.jumpPressed() && (currentTime - player->getLastJumpTime() >JUMP_COOLDOWN ) && player->getIsGrounded()) {
-        player->getVelocity().y -= JUMP_SPEED;
-        player->setLastJumpTime(currentTime);
-      }
-    }
-  }
   void run() {
     while (window.isOpen()) {
-      float dt = clock.restart().asSeconds();
-      currentTime += dt;
       handleEvents();
-      handleInputs();
+      float dt = clock.restart().asSeconds();
       update(dt);
       render();
     }

@@ -819,14 +819,13 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: /Users/mohamedazizgannar/Projects/P
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stddef.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdint.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Character.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/CollisionSystem.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Components.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Components/Components.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Entity.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/GameManager.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/InputSystem.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/MovementSystem.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Platform.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/RenderSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/CollisionSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/InputSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/MovementSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/RenderSystem.h \
   /opt/homebrew/include/SFML/Config.hpp \
   /opt/homebrew/include/SFML/Graphics.hpp \
   /opt/homebrew/include/SFML/Graphics/BlendMode.hpp \
@@ -997,17 +996,13 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: /Users/mohamedazizgannar/Projects/P
 
 /opt/homebrew/include/SFML/Config.hpp:
 
-/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/RenderSystem.h:
+/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/RenderSystem.h:
 
-/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/MovementSystem.h:
+/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/InputSystem.h:
 
 /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/GameManager.h:
 
-/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Components.h:
-
-/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/CollisionSystem.h:
-
-/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Character.h:
+/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Components/Components.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdint.h:
 
@@ -1178,6 +1173,8 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: /Users/mohamedazizgannar/Projects/P
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h:
+
+/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/CollisionSystem.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/__endian.h:
 
@@ -1372,8 +1369,6 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: /Users/mohamedazizgannar/Projects/P
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/void_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/underlying_type.h:
-
-/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/InputSystem.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility:
 
@@ -1831,8 +1826,6 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: /Users/mohamedazizgannar/Projects/P
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_entry.h:
 
-/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Platform.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/move_sentinel.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__iterator/default_sentinel.h:
@@ -2074,6 +2067,8 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: /Users/mohamedazizgannar/Projects/P
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/set_intersection.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__configuration/availability.h:
+
+/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/MovementSystem.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/invoke.h:
 
@@ -2502,6 +2497,8 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: /Users/mohamedazizgannar/Projects/P
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/nl_types.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/limits.h:
+
+/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Entity.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/for_each_n.h:
 

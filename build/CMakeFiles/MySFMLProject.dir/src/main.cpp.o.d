@@ -1,7 +1,6 @@
 CMakeFiles/MySFMLProject.dir/src/main.cpp.o: \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/src/main.cpp \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Character.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Components.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Entity.h \
   /opt/homebrew/include/SFML/Graphics.hpp \
   /opt/homebrew/include/SFML/Graphics/BlendMode.hpp \
   /opt/homebrew/include/SFML/Graphics/Export.hpp \
@@ -897,9 +896,9 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: \
   /opt/homebrew/include/SFML/System/InputStream.hpp \
   /opt/homebrew/include/SFML/System/MemoryInputStream.hpp \
   /opt/homebrew/include/SFML/System/Sleep.hpp \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Components/Components.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/GameManager.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/CollisionSystem.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/InputSystem.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/MovementSystem.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Platform.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/RenderSystem.h
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/CollisionSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/InputSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/MovementSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/RenderSystem.h
