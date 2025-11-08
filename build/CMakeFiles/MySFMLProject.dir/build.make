@@ -99,6 +99,7 @@ bin/MySFMLProject: /opt/homebrew/lib/libsfml-graphics.3.0.2.dylib
 bin/MySFMLProject: /opt/homebrew/lib/libsfml-window.3.0.2.dylib
 bin/MySFMLProject: /opt/homebrew/lib/libsfml-audio.3.0.2.dylib
 bin/MySFMLProject: /opt/homebrew/lib/libsfml-network.3.0.2.dylib
+bin/MySFMLProject: /opt/homebrew/lib/libyaml-cpp.dylib
 bin/MySFMLProject: /opt/homebrew/lib/libsfml-system.3.0.2.dylib
 bin/MySFMLProject: CMakeFiles/MySFMLProject.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bin/MySFMLProject"

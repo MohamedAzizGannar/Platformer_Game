@@ -451,6 +451,7 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/poll_with_backoff.h
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/support.h
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/support/pthread.h
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/find_index.h
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/ignore.h
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tuple/make_tuple_types.h
@@ -636,11 +637,14 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ios
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/istream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iterator
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/limits
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/list
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/locale.h
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/math.h
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/memory
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/mutex
@@ -650,6 +654,8 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/print
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/queue
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/ratio
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stack
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/stdexcept
@@ -666,6 +672,7 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/typeinfo
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_map
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/utility
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/valarray
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/variant
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/version
@@ -823,6 +830,8 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o
  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Components/Components.h
  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Entity.h
  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/GameManager.h
+ /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/AnimationLoader.h
+ /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/AnimationSystems.h
  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/CollisionSystem.h
  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/DashSystem.h
  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/GroundCheckSystem.h
@@ -908,4 +917,35 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o
  /opt/homebrew/include/SFML/Window/WindowBase.inl
  /opt/homebrew/include/SFML/Window/WindowEnums.hpp
  /opt/homebrew/include/SFML/Window/WindowHandle.hpp
+ /opt/homebrew/include/yaml-cpp/binary.h
+ /opt/homebrew/include/yaml-cpp/dll.h
+ /opt/homebrew/include/yaml-cpp/emitter.h
+ /opt/homebrew/include/yaml-cpp/emitterdef.h
+ /opt/homebrew/include/yaml-cpp/emittermanip.h
+ /opt/homebrew/include/yaml-cpp/emitterstyle.h
+ /opt/homebrew/include/yaml-cpp/exceptions.h
+ /opt/homebrew/include/yaml-cpp/mark.h
+ /opt/homebrew/include/yaml-cpp/node/convert.h
+ /opt/homebrew/include/yaml-cpp/node/detail/impl.h
+ /opt/homebrew/include/yaml-cpp/node/detail/iterator.h
+ /opt/homebrew/include/yaml-cpp/node/detail/iterator_fwd.h
+ /opt/homebrew/include/yaml-cpp/node/detail/memory.h
+ /opt/homebrew/include/yaml-cpp/node/detail/node.h
+ /opt/homebrew/include/yaml-cpp/node/detail/node_data.h
+ /opt/homebrew/include/yaml-cpp/node/detail/node_iterator.h
+ /opt/homebrew/include/yaml-cpp/node/detail/node_ref.h
+ /opt/homebrew/include/yaml-cpp/node/emit.h
+ /opt/homebrew/include/yaml-cpp/node/impl.h
+ /opt/homebrew/include/yaml-cpp/node/iterator.h
+ /opt/homebrew/include/yaml-cpp/node/node.h
+ /opt/homebrew/include/yaml-cpp/node/parse.h
+ /opt/homebrew/include/yaml-cpp/node/ptr.h
+ /opt/homebrew/include/yaml-cpp/node/type.h
+ /opt/homebrew/include/yaml-cpp/noexcept.h
+ /opt/homebrew/include/yaml-cpp/null.h
+ /opt/homebrew/include/yaml-cpp/ostream_wrapper.h
+ /opt/homebrew/include/yaml-cpp/parser.h
+ /opt/homebrew/include/yaml-cpp/stlemitter.h
+ /opt/homebrew/include/yaml-cpp/traits.h
+ /opt/homebrew/include/yaml-cpp/yaml.h
 

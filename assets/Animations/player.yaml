@@ -1,0 +1,35 @@
+texture: "../assets/sprites/soldiers/Soldier.png"
+animations:
+  idle:
+    frameCount : 6
+    frameWidth: 100
+    frameHeight : 100
+    startX : 0
+    startY : 0
+    frameTime : 0.2
+    scale : 2
+  walk:
+    frameCount : 8
+    frameWidth : 100
+    frameHeight : 100
+    startX : 0
+    startY : 100
+    frameTime : 0.2
+    scale : 2
+  attack:
+    frameCount : 6
+    frameWidth: 100
+    frameHeight : 100
+    startX : 0
+    startY : 200
+    frameTime : 0.08
+    scale : 2
+  shoot:
+    frameCount : 9
+    frameWidth: 100
+    frameHeight : 100
+    startX : 0
+    startY : 400
+    frameTime : 0.08
+    scale : 2
+

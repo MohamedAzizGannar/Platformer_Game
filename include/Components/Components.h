@@ -13,8 +13,8 @@ struct Velocity {
 struct Movement {
   float maxSpeed;
   float acceleration;
-  float friction = 15.f;
-  Movement(float maxSpeed = 500.f, float acceleration = 3000.f)
+  float friction = 18.f;
+  Movement(float maxSpeed = 300.f, float acceleration = 2000.f)
       : maxSpeed(maxSpeed), acceleration(acceleration) {}
 };
 struct JumpComponent {
@@ -88,4 +88,38 @@ enum class EntityLayer { Default, Player, Ground };
 struct Tag {
   EntityLayer tag = EntityLayer::Default;
   Tag(EntityLayer layer) : tag(layer) {}
+};
+struct Sprite {
+  const sf::Texture *texture;
+  sf::Sprite sprite;
+  sf::IntRect rect;
+  int scale = 2;
+  Sprite(const sf::Texture &tex) : texture(&tex), sprite(*texture) {
+    if (texture) {
+      sprite.setTexture(*texture, true);
+      sprite.setScale({(float)scale,(float)scale});
+    }
+  }
+  void setTexture(const sf::Texture &tex) {
+    texture = &tex;
+    sprite.setTexture(tex);
+    sprite.setScale({(float)scale,(float)scale});
+  }
+};
+struct AnimationData {
+  int frameWidth, frameHeight;
+  int frameCount;
+  int startX, startY;
+  float frameTime;
+};
+struct Animation {
+  std::string currentAnimation;
+  int currentFrame;
+  float frameTimer;
+  std::unordered_map<std::string, AnimationData> animations;
+  bool isLocked = false;
+};
+struct EntityAnimConfig {
+  std::string texturePath;
+  std::unordered_map<std::string, AnimationData> animations;
 };

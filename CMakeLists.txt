@@ -1,3 +1,4 @@
+
 cmake_minimum_required(VERSION 3.20)
 project(MySFMLProject VERSION 1.0.0 LANGUAGES CXX)
 
@@ -11,7 +12,32 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Find SFML 3.0
 find_package(SFML 3.0 COMPONENTS Graphics Window System Audio Network REQUIRED)
-include_directories(include())
+
+# Find yaml-cpp (with hint for Homebrew location)
+if(APPLE)
+    # For Apple Silicon
+    set(YAML_CPP_HINTS "/opt/homebrew/include" "/opt/homebrew/lib")
+    # For Intel Macs, add: "/usr/local/include" "/usr/local/lib"
+endif()
+
+find_path(YAML_CPP_INCLUDE_DIR 
+    NAMES yaml-cpp/yaml.h
+    HINTS ${YAML_CPP_HINTS}
+)
+
+find_library(YAML_CPP_LIBRARY
+    NAMES yaml-cpp
+    HINTS ${YAML_CPP_HINTS}
+)
+
+if(NOT YAML_CPP_INCLUDE_DIR OR NOT YAML_CPP_LIBRARY)
+    message(FATAL_ERROR "yaml-cpp not found! Install with: brew install yaml-cpp")
+endif()
+
+include_directories(
+    include
+    ${YAML_CPP_INCLUDE_DIR}
+)
 # Compiler warnings
 if(MSVC)
     add_compile_options(/W4)
@@ -37,6 +63,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     SFML::System 
     SFML::Audio
     SFML::Network
+    ${YAML_CPP_LIBRARY}
 )
 
 # Include directories

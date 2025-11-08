@@ -898,9 +898,49 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: \
   /opt/homebrew/include/SFML/System/Sleep.hpp \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Components/Components.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/GameManager.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/AnimationLoader.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/InputSystem.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
+  /opt/homebrew/include/yaml-cpp/yaml.h \
+  /opt/homebrew/include/yaml-cpp/parser.h \
+  /opt/homebrew/include/yaml-cpp/dll.h \
+  /opt/homebrew/include/yaml-cpp/emitter.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
+  /opt/homebrew/include/yaml-cpp/binary.h \
+  /opt/homebrew/include/yaml-cpp/emitterdef.h \
+  /opt/homebrew/include/yaml-cpp/emittermanip.h \
+  /opt/homebrew/include/yaml-cpp/null.h \
+  /opt/homebrew/include/yaml-cpp/ostream_wrapper.h \
+  /opt/homebrew/include/yaml-cpp/emitterstyle.h \
+  /opt/homebrew/include/yaml-cpp/stlemitter.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/list \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
+  /opt/homebrew/include/yaml-cpp/exceptions.h \
+  /opt/homebrew/include/yaml-cpp/mark.h \
+  /opt/homebrew/include/yaml-cpp/noexcept.h \
+  /opt/homebrew/include/yaml-cpp/traits.h \
+  /opt/homebrew/include/yaml-cpp/node/node.h \
+  /opt/homebrew/include/yaml-cpp/node/detail/iterator_fwd.h \
+  /opt/homebrew/include/yaml-cpp/node/ptr.h \
+  /opt/homebrew/include/yaml-cpp/node/type.h \
+  /opt/homebrew/include/yaml-cpp/node/impl.h \
+  /opt/homebrew/include/yaml-cpp/node/detail/memory.h \
+  /opt/homebrew/include/yaml-cpp/node/detail/node.h \
+  /opt/homebrew/include/yaml-cpp/node/detail/node_ref.h \
+  /opt/homebrew/include/yaml-cpp/node/detail/node_data.h \
+  /opt/homebrew/include/yaml-cpp/node/detail/node_iterator.h \
+  /opt/homebrew/include/yaml-cpp/node/iterator.h \
+  /opt/homebrew/include/yaml-cpp/node/detail/iterator.h \
+  /opt/homebrew/include/yaml-cpp/node/convert.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/valarray \
+  /opt/homebrew/include/yaml-cpp/node/detail/impl.h \
+  /opt/homebrew/include/yaml-cpp/node/parse.h \
+  /opt/homebrew/include/yaml-cpp/node/emit.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/AnimationSystems.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/CollisionSystem.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/DashSystem.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/InputSystem.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/GroundCheckSystem.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/JumpSystem.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/MovementSystem.h \

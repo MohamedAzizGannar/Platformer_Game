@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/ContextSettings.hpp>
+#include <Systems/AnimationLoader.h>
+#include <Systems/AnimationSystems.h>
 #include <Systems/CollisionSystem.h>
 #include <Systems/DashSystem.h>
 #include <Systems/GroundCheckSystem.h>
@@ -27,6 +29,9 @@ private:
   GroundCheckSystem groundCheckSystem;
   JumpSystem jumpSystem;
   DashSystem dashSystem;
+  AnimationSystem animationSystem;
+  std::unordered_map<std::string, sf::Texture> textures;
+  std::unordered_map<std::string, EntityAnimConfig> animConfigs;
 
 public:
   GameManager(uint32_t WINDOW_WIDTH, uint32_t WINDOW_HEIGHT)
@@ -37,12 +42,62 @@ public:
     inputSystem.trackKey(sf::Keyboard::Key::Right);
     inputSystem.trackKey(sf::Keyboard::Key::Space);
     inputSystem.trackKey(sf::Keyboard::Key::LShift);
+    inputSystem.trackKey(sf::Keyboard::Key::W);
+    inputSystem.trackKey(sf::Keyboard::Key::E);
 
     window.setFramerateLimit(60);
+    LoadRessources();
   }
   void addEntity(Entity &entity) {
     entity.id = entities.size();
     entities.push_back(entity);
+  }
+  void LoadRessources() {
+    animConfigs =
+        AnimationLoader::loadALlAnimsFromFolder("../assets/Animations");
+    for (const auto &[name, config] : animConfigs) {
+      sf::Texture texture;
+      if (texture.loadFromFile(config.texturePath)) {
+        textures[name] = std::move(texture);
+        std::cout << "✓ Loaded texture: " << name << std::endl;
+      } else {
+        std::cerr << "✗ Failed to load: " << config.texturePath << std::endl;
+      }
+    }
+  }
+  sf::Texture *getTexture(const std::string &name) { // ADD THIS HELPER
+    auto it = textures.find(name);
+    return (it != textures.end()) ? &it->second : nullptr;
+  }
+  EntityAnimConfig *getAnimConfig(const std::string &name) { // ADD THIS HELPER
+    auto it = animConfigs.find(name);
+    return (it != animConfigs.end()) ? &it->second : nullptr;
+  }
+  void updateEntityAnimation(Entity &entity, const InputSystem &input) {
+    if (!entity.animation || !entity.tag)
+      return;
+
+    if (entity.tag->tag != EntityLayer::Player)
+      return;
+
+    auto &anim = entity.animation.value();
+    float axisX = input.getAxisX();
+    if (axisX != 0.f && entity.sprite) {
+      sf::Vector2f currScale = entity.sprite->sprite.getScale();
+      entity.sprite->sprite.setScale(
+          {(axisX < 0 ? -1.f : 1.f) * entity.sprite->scale, currScale.y});
+    }
+
+    if(input.isKeyPressed(sf::Keyboard::Key::E)){
+        AnimationSystem::changeAnimation(anim, "shoot");
+    }
+    if (input.isKeyPressed(sf::Keyboard::Key::W)) {
+        AnimationSystem::changeAnimation(anim, "attack");
+    } else if (axisX != 0.f) {
+      AnimationSystem::changeAnimation(anim, "walk");
+    } else {
+      AnimationSystem::changeAnimation(anim, "idle");
+    }
   }
   void update(float dt) {
     inputSystem.update();
@@ -55,6 +110,7 @@ public:
           movementSystem.update(entity, inputSystem, dt);
           movementSystem.applyGravity(entity, dt);
         }
+        updateEntityAnimation(entity, inputSystem);
       }
       for (auto &other : entities) {
         if (other.id == entity.id)
@@ -64,8 +120,15 @@ public:
           collisionSystem.ResolveCollisions(entity, other, info);
         }
       }
-      entity.shape->shape.setPosition(
-          {entity.transform.value().x, entity.transform.value().y});
+      if (entity.shape) {
+        entity.shape->shape.setPosition(
+            {entity.transform.value().x, entity.transform.value().y});
+      }
+      if (entity.sprite) {
+        entity.sprite->sprite.setPosition(
+            {entity.transform.value().x, entity.transform.value().y});
+      }
+      animationSystem.update(entity, dt);
     }
     groundCheckSystem.update(entities);
   }

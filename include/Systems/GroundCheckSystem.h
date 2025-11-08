@@ -23,7 +23,7 @@ public:
     float pTop = pBounds.position.y;
     float distance = pTop - cBottom; // vertical distance above platform
     const float tolerance =
-        10.f; // increase this if gravity moves character faster
+        5.f; // increase this if gravity moves character faster
 
     // check vertical proximity
     bool verticalCheck = distance >= 0.f && distance <= tolerance;

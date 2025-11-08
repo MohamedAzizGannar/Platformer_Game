@@ -231,6 +231,15 @@ SFML_DIR:PATH=/opt/homebrew/lib/cmake/SFML
 //Path to a file.
 SFML_DOC_DIR:PATH=/opt/homebrew/share/doc/SFML
 
+//Path to a file.
+YAML_CPP_INCLUDE_DIR:PATH=/opt/homebrew/include
+
+//Path to a library.
+YAML_CPP_LIBRARY:FILEPATH=/opt/homebrew/lib/libyaml-cpp.dylib
+
+//The directory containing a CMake configuration file for yaml-cpp.
+yaml-cpp_DIR:PATH=/opt/homebrew/lib/cmake/yaml-cpp
+
 
 ########################
 # INTERNAL cache entries

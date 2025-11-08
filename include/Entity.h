@@ -17,4 +17,6 @@ struct Entity{
   std::optional<Grounded> grounded;
   std::optional<Tag> tag;
   std::optional<Dash> dash;
+  std::optional<Animation> animation;
+  std::optional<Sprite> sprite;
 };
