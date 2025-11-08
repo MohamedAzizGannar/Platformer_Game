@@ -14,4 +14,6 @@ struct Entity{
   std::optional<Health> health;
   std::optional<Collider> collider;
   std::optional<Shape> shape;
+  std::optional<Grounded> grounded;
+  std::optional<Tag> tag;
 };

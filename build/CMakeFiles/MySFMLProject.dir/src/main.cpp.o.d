@@ -899,6 +899,8 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Components/Components.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/GameManager.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/CollisionSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/GroundCheckSystem.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/InputSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/JumpSystem.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/MovementSystem.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/RenderSystem.h

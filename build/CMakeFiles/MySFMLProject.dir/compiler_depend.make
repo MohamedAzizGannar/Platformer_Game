@@ -823,7 +823,9 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: /Users/mohamedazizgannar/Projects/P
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Entity.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/GameManager.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/CollisionSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/GroundCheckSystem.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/InputSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/JumpSystem.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/MovementSystem.h \
   /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/RenderSystem.h \
   /opt/homebrew/include/SFML/Config.hpp \
@@ -998,7 +1000,11 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: /Users/mohamedazizgannar/Projects/P
 
 /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/RenderSystem.h:
 
+/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/JumpSystem.h:
+
 /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/InputSystem.h:
+
+/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/GroundCheckSystem.h:
 
 /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/GameManager.h:
 

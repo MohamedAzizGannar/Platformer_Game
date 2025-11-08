@@ -3,7 +3,7 @@
 #include <Entity.h>
 #include <SFML/Graphics.hpp>
 #include <Systems/InputSystem.h>
-const float GRAVITY = 200.f;
+const float GRAVITY = 900.f;
 class MovementSystem {
 public:
   void update(Entity &entity, const InputSystem &input, float dt) {

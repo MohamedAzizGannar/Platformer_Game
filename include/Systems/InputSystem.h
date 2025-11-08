@@ -72,11 +72,11 @@ public:
   }
   float getAxisX() const {
     float axis = 0.f;
-    if (isKeyHeld(sf::Keyboard::Key::A) ||
+    if (isKeyHeld(sf::Keyboard::Key::D) ||
         isKeyHeld(sf::Keyboard::Key::Right)) {
       axis += 1.f;
     }
-    if (isKeyHeld(sf::Keyboard::Key::D) || isKeyHeld(sf::Keyboard::Key::Left)) {
+    if (isKeyHeld(sf::Keyboard::Key::A) || isKeyHeld(sf::Keyboard::Key::Left)) {
       axis -= 1.f;
     }
     return axis;
