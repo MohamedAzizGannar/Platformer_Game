@@ -32,8 +32,20 @@ struct JumpComponent {
   JumpComponent(float jumpForce = 450.f, float jumpCooldown = 0.3f,
                 float maxJumps = 2)
       : jumpForce(jumpForce), jumpCooldown(jumpCooldown), maxJumps(maxJumps),
-        usedJumps(0),coyoteTimer(0.f),maxCoyoteTime(0.03f) {}
+        usedJumps(0), coyoteTimer(0.f), maxCoyoteTime(0.03f) {}
   void resetJumps() { usedJumps = 0; }
+};
+struct Dash {
+  float dashForce;
+  float dashDuration;
+  bool canDash = true;
+  bool isDashing = false;
+  float dashTimer = 0.f;
+  float cooldownTimer = 0.f;
+  float dashCooldown = .5f;
+  sf::Vector2f dashDirection{0.f, 0.f};
+  Dash(float force = 700.f, float duration = 0.12f)
+      : dashForce(force), dashDuration(duration) {}
 };
 struct Health {
   float current, max;
@@ -68,16 +80,12 @@ struct CollisionInfo {
   sf::Vector2f normal;
   float overlay;
 };
-struct Grounded{
+struct Grounded {
   bool isGrounded = false;
 };
 
-enum class EntityLayer{
-  Default,
-  Player,
-  Ground
-};
-struct Tag{
+enum class EntityLayer { Default, Player, Ground };
+struct Tag {
   EntityLayer tag = EntityLayer::Default;
-  Tag(EntityLayer layer) : tag(layer){}
+  Tag(EntityLayer layer) : tag(layer) {}
 };

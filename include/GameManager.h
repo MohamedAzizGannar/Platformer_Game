@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/ContextSettings.hpp>
 #include <Systems/CollisionSystem.h>
+#include <Systems/DashSystem.h>
 #include <Systems/GroundCheckSystem.h>
 #include <Systems/InputSystem.h>
 #include <Systems/JumpSystem.h>
@@ -25,6 +26,7 @@ private:
   RenderSystem renderSystem;
   GroundCheckSystem groundCheckSystem;
   JumpSystem jumpSystem;
+  DashSystem dashSystem;
 
 public:
   GameManager(uint32_t WINDOW_WIDTH, uint32_t WINDOW_HEIGHT)
@@ -48,8 +50,11 @@ public:
       bool isStatic = entity.collider && entity.collider->isStatic;
       if (!isStatic) {
         jumpSystem.update(entity, inputSystem, dt);
-        movementSystem.update(entity, inputSystem, dt);
-        movementSystem.applyGravity(entity, dt);
+        dashSystem.update(entity, inputSystem, dt);
+        if (!entity.dash.value().isDashing) {
+          movementSystem.update(entity, inputSystem, dt);
+          movementSystem.applyGravity(entity, dt);
+        }
       }
       for (auto &other : entities) {
         if (other.id == entity.id)

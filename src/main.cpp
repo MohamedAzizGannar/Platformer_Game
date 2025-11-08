@@ -16,6 +16,7 @@ int main() {
   player.shape = Shape(sf::Color::Blue, 20.f, 50.f);
   player.tag = Tag(EntityLayer::Player);
   player.grounded = Grounded();
+  player.dash = Dash();
 
   Entity platform;
   platform.transform = Transform(300.f, 700.f);

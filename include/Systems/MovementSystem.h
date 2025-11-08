@@ -16,7 +16,6 @@ public:
     float inputX = input.getAxisX();
     if (inputX != 0.f) {
       vel->x += inputX * mov.value().acceleration * dt;
-      vel->x = std::clamp(vel->x, -mov.value().maxSpeed, mov.value().maxSpeed);
     } else {
       vel->x *= std::max(0.f, 1.f - mov.value().friction * dt);
     }
