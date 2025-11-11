@@ -93,17 +93,21 @@ struct Sprite {
   const sf::Texture *texture;
   sf::Sprite sprite;
   sf::IntRect rect;
-  int scale = 2;
-  Sprite(const sf::Texture &tex) : texture(&tex), sprite(*texture) {
-    if (texture) {
-      sprite.setTexture(*texture, true);
-      sprite.setScale({(float)scale,(float)scale});
-    }
+  float scale ;
+  Sprite(const sf::Texture &tex, float scale = 2.f)
+      : texture(&tex), sprite(*texture), scale(scale) {
+    sprite.setTexture(*texture, true);
+    sprite.setScale({scale, scale});
   }
+
   void setTexture(const sf::Texture &tex) {
     texture = &tex;
     sprite.setTexture(tex);
-    sprite.setScale({(float)scale,(float)scale});
+    sprite.setScale({(float)scale, (float)scale});
+  }
+  void setScale(float s) {
+    scale = s;
+    sprite.setScale({s, s});
   }
 };
 struct AnimationData {
@@ -111,6 +115,8 @@ struct AnimationData {
   int frameCount;
   int startX, startY;
   float frameTime;
+  bool isLockable = false;
+  int scale;
 };
 struct Animation {
   std::string currentAnimation;
@@ -122,4 +128,5 @@ struct Animation {
 struct EntityAnimConfig {
   std::string texturePath;
   std::unordered_map<std::string, AnimationData> animations;
+  float scale;
 };

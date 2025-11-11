@@ -16,6 +16,11 @@ public:
         std::cerr << "No texture found in " << filePath << std::endl;
       }
 
+      if (root["scale"]) {
+        config.scale = root["scale"].as<float>();
+      } else {
+        std::cerr << "No scale found in " << filePath << std::endl;
+      }
       if (root["animations"]) {
         YAML::Node animations = root["animations"];
         for (auto it = animations.begin(); it != animations.end(); ++it) {
@@ -30,6 +35,7 @@ public:
           animData.startY = animNode["startY"].as<int>();
           animData.frameWidth = animNode["frameWidth"].as<int>();
           animData.frameHeight = animNode["frameHeight"].as<int>();
+          animData.isLockable = animNode["isLockable"].as<bool>();
 
           config.animations[animName] = animData;
         }

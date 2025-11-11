@@ -14,7 +14,6 @@ int main() {
   player.velocity = Velocity();
   player.movement = Movement();
   player.jump = JumpComponent();
-  player.collider = Collider(50.f, 50.f);
   player.tag = Tag(EntityLayer::Player);
   player.grounded = Grounded();
   player.dash = Dash();
@@ -22,8 +21,9 @@ int main() {
   sf::Texture *playerTexture = game.getTexture("player");
   if (playerTexture) {
     std::cout << "✓ Player texture found" << std::endl;
-    player.sprite = Sprite(*playerTexture);
     EntityAnimConfig *config = game.getAnimConfig("player");
+    player.sprite = Sprite(*playerTexture, config->scale);
+    player.collider = Collider(100.f, 100.f);
     if (config) {
       std::cout << "✓ Animation config found" << std::endl;
       Animation anim;
@@ -37,8 +37,7 @@ int main() {
           sf::IntRect({idleAnim.startX, idleAnim.startY},
                       {(int)idleAnim.frameWidth, (int)idleAnim.frameHeight}));
       player.sprite->sprite.setOrigin(
-          {idleAnim.frameWidth / 2.f,
-           idleAnim.frameHeight / 2.f - 5.f});
+          {idleAnim.frameWidth / 2.f, idleAnim.frameHeight / 2.f});
       std::cout << "✓ Animation set to: " << anim.currentAnimation << std::endl;
     }
   }

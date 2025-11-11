@@ -61,11 +61,11 @@ public:
       sf::Time last = lastTimePressed[key];
       if (last != sf::Time::Zero && (now - last) <= doublePressThreshold) {
         lastTimePressed[key] =
-            sf::Time::Zero; // reset to avoid triple-detection
+            sf::Time::Zero; 
         return true;
       } else {
         lastTimePressed[key] =
-            now; // first press or too slow → start new timing
+            now; 
       }
     }
     return false;

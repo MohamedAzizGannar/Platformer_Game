@@ -21,14 +21,12 @@ public:
 
     float cBottom = cBounds.position.y + cBounds.size.y;
     float pTop = pBounds.position.y;
-    float distance = pTop - cBottom; // vertical distance above platform
+    float distance = pTop - cBottom; 
     const float tolerance =
-        5.f; // increase this if gravity moves character faster
+        5.f; 
 
-    // check vertical proximity
     bool verticalCheck = distance >= 0.f && distance <= tolerance;
 
-    // check horizontal overlap (full width)
     bool horizontalCheck =
         cBounds.position.x + cBounds.size.x > pBounds.position.x &&
         cBounds.position.x < pBounds.position.x + pBounds.size.x;

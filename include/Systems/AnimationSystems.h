@@ -23,7 +23,7 @@ public:
     }
     if (anim.currentFrame >= currentAnim.frameCount) {
       anim.currentFrame = 0;
-      if (anim.isLocked &&( anim.currentAnimation == "attack" || anim.currentAnimation == "shoot") ) {
+      if (anim.isLocked && (currentAnim.isLockable)) {
         anim.isLocked = false;
       }
     }
@@ -43,7 +43,7 @@ public:
       anim.currentFrame = 0;
       anim.frameTimer = 0.0f;
     }
-    if (newAnim == "attack" || newAnim == "shoot")
+    if (anim.animations[newAnim].isLockable  )
       anim.isLocked = true;
   }
 };

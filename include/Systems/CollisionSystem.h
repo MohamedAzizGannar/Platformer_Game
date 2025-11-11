@@ -38,13 +38,13 @@ public:
       collisionInfo.overlay = minPenetration;
 
       if (minPenetration == left) {
-        collisionInfo.normal = sf::Vector2f(-1, 0); // Push left
+        collisionInfo.normal = sf::Vector2f(-1, 0); 
       } else if (minPenetration == right) {
-        collisionInfo.normal = sf::Vector2f(1, 0); // Push right
+        collisionInfo.normal = sf::Vector2f(1, 0); 
       } else if (minPenetration == top) {
-        collisionInfo.normal = sf::Vector2f(0, -1); // Push up
+        collisionInfo.normal = sf::Vector2f(0, -1); 
       } else {
-        collisionInfo.normal = sf::Vector2f(0, 1); // Push down
+        collisionInfo.normal = sf::Vector2f(0, 1); 
       }
     }
     return collisionInfo;

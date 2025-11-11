@@ -65,11 +65,11 @@ public:
       }
     }
   }
-  sf::Texture *getTexture(const std::string &name) { // ADD THIS HELPER
+  sf::Texture *getTexture(const std::string &name) {
     auto it = textures.find(name);
     return (it != textures.end()) ? &it->second : nullptr;
   }
-  EntityAnimConfig *getAnimConfig(const std::string &name) { // ADD THIS HELPER
+  EntityAnimConfig *getAnimConfig(const std::string &name) { 
     auto it = animConfigs.find(name);
     return (it != animConfigs.end()) ? &it->second : nullptr;
   }
@@ -82,17 +82,17 @@ public:
 
     auto &anim = entity.animation.value();
     float axisX = input.getAxisX();
+    sf::Vector2f currScale = entity.sprite->sprite.getScale();
     if (axisX != 0.f && entity.sprite) {
-      sf::Vector2f currScale = entity.sprite->sprite.getScale();
+      float flip = (axisX < 0 ? -1.f : 1.f);
       entity.sprite->sprite.setScale(
-          {(axisX < 0 ? -1.f : 1.f) * entity.sprite->scale, currScale.y});
+          {flip * entity.sprite->scale, entity.sprite->scale});
     }
-
-    if(input.isKeyPressed(sf::Keyboard::Key::E)){
-        AnimationSystem::changeAnimation(anim, "shoot");
+    if (input.isKeyPressed(sf::Keyboard::Key::E)) {
+      AnimationSystem::changeAnimation(anim, "shoot");
     }
     if (input.isKeyPressed(sf::Keyboard::Key::W)) {
-        AnimationSystem::changeAnimation(anim, "attack");
+      AnimationSystem::changeAnimation(anim, "attack");
     } else if (axisX != 0.f) {
       AnimationSystem::changeAnimation(anim, "walk");
     } else {
@@ -136,7 +136,9 @@ public:
     window.clear(sf::Color::White);
     for (auto &entity : entities) {
       renderSystem.render(entity, window);
+      renderSystem.debugRender(entity, window);
     }
+
     window.display();
   }
   void handleEvents() {
