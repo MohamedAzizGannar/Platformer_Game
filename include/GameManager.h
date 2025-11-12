@@ -21,7 +21,6 @@ private:
 
   std::vector<Entity> entities;
 
-  float currentTime = 0.f;
   CollisionSystem collisionSystem;
   InputSystem inputSystem;
   MovementSystem movementSystem;
@@ -69,7 +68,7 @@ public:
     auto it = textures.find(name);
     return (it != textures.end()) ? &it->second : nullptr;
   }
-  EntityAnimConfig *getAnimConfig(const std::string &name) { 
+  EntityAnimConfig *getAnimConfig(const std::string &name) {
     auto it = animConfigs.find(name);
     return (it != animConfigs.end()) ? &it->second : nullptr;
   }
@@ -104,10 +103,10 @@ public:
     for (auto &entity : entities) {
       bool isStatic = entity.collider && entity.collider->isStatic;
       if (!isStatic) {
-        jumpSystem.update(entity, inputSystem, dt);
         dashSystem.update(entity, inputSystem, dt);
+        movementSystem.update(entity, inputSystem, dt);
+        jumpSystem.update(entity, inputSystem, dt);
         if (!entity.dash.value().isDashing) {
-          movementSystem.update(entity, inputSystem, dt);
           movementSystem.applyGravity(entity, dt);
         }
         updateEntityAnimation(entity, inputSystem);
@@ -136,7 +135,6 @@ public:
     window.clear(sf::Color::White);
     for (auto &entity : entities) {
       renderSystem.render(entity, window);
-      renderSystem.debugRender(entity, window);
     }
 
     window.display();

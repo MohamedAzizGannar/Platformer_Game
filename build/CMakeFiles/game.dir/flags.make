@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include -isystem /opt/homebrew/include
+CXX_INCLUDES = -I/Users/mohamedazizgannar/Projects/Personal/sfmlProject/include -isystem /opt/homebrew/include
 
 CXX_FLAGSarm64 = -std=c++17 -arch arm64 -Wall -Wextra -Wpedantic
 

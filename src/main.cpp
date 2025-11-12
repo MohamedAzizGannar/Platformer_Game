@@ -23,7 +23,6 @@ int main() {
     std::cout << "✓ Player texture found" << std::endl;
     EntityAnimConfig *config = game.getAnimConfig("player");
     player.sprite = Sprite(*playerTexture, config->scale);
-    player.collider = Collider(100.f, 100.f);
     if (config) {
       std::cout << "✓ Animation config found" << std::endl;
       Animation anim;
@@ -33,11 +32,24 @@ int main() {
       anim.frameTimer = 0.f;
       player.animation = anim;
       auto &idleAnim = config->animations["idle"];
+      std::cout << "Offset : " << idleAnim.offsetX << ", " << idleAnim.offsetY
+                << "\n";
       player.sprite->sprite.setTextureRect(
-          sf::IntRect({idleAnim.startX, idleAnim.startY},
-                      {(int)idleAnim.frameWidth, (int)idleAnim.frameHeight}));
+          sf::IntRect({idleAnim.startX + idleAnim.offsetX,
+                       idleAnim.startY + idleAnim.offsetY},
+                      {(int)idleAnim.frameWidth - idleAnim.offsetX,
+                       (int)idleAnim.frameHeight - idleAnim.offsetY}));
       player.sprite->sprite.setOrigin(
-          {idleAnim.frameWidth / 2.f, idleAnim.frameHeight / 2.f});
+          {(idleAnim.frameWidth - idleAnim.offsetX) / 2.f,
+           (idleAnim.frameHeight - idleAnim.offsetY) / 2.f - 1});
+      player.collider =
+          Collider(player.sprite->sprite.getGlobalBounds().size.x,
+                   player.sprite->sprite.getGlobalBounds().size.y);
+      std::cout << "collider " << player.collider->width << ","
+                << player.collider->height << "\n";
+      std::cout << "sprite" << player.sprite->sprite.getGlobalBounds().size.x
+                << "," << player.sprite->sprite.getGlobalBounds().size.y
+                << "\n";
       std::cout << "✓ Animation set to: " << anim.currentAnimation << std::endl;
     }
   }

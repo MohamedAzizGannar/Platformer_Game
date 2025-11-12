@@ -29,9 +29,11 @@ public:
     }
     sf::IntRect frameRect(
         {(int)currentAnim.startX +
-             (anim.currentFrame * (int)currentAnim.frameWidth),
-         currentAnim.startY},
-        {(int)currentAnim.frameWidth, (int)currentAnim.frameHeight});
+             (anim.currentFrame * (int)currentAnim.frameWidth) +
+             currentAnim.offsetX / 2,
+         currentAnim.startY + currentAnim.offsetY / 2 - 2},
+        {(int)currentAnim.frameWidth - currentAnim.offsetX,
+         (int)currentAnim.frameHeight - currentAnim.offsetY});
     sprite.sprite.setTextureRect(frameRect);
     sprite.rect = frameRect;
   }
@@ -43,7 +45,7 @@ public:
       anim.currentFrame = 0;
       anim.frameTimer = 0.0f;
     }
-    if (anim.animations[newAnim].isLockable  )
+    if (anim.animations[newAnim].isLockable)
       anim.isLocked = true;
   }
 };

@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject
+CMAKE_SOURCE_DIR = /Users/mohamedazizgannar/Projects/Personal/sfmlProject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/build
+CMAKE_BINARY_DIR = /Users/mohamedazizgannar/Projects/Personal/sfmlProject/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/build/CMakeFiles /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mohamedazizgannar/Projects/Personal/sfmlProject/build/CMakeFiles /Users/mohamedazizgannar/Projects/Personal/sfmlProject/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mohamedazizgannar/Projects/Personal/sfmlProject/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -113,29 +113,29 @@ preinstall/fast:
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -P /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /Users/mohamedazizgannar/Projects/Personal/sfmlProject/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MySFMLProject
+# Target rules for targets named game
 
 # Build rule for target.
-MySFMLProject: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MySFMLProject
-.PHONY : MySFMLProject
+game: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 game
+.PHONY : game
 
 # fast build rule for target.
-MySFMLProject/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySFMLProject.dir/build.make CMakeFiles/MySFMLProject.dir/build
-.PHONY : MySFMLProject/fast
+game/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/build
+.PHONY : game/fast
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySFMLProject.dir/build.make CMakeFiles/MySFMLProject.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -143,7 +143,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySFMLProject.dir/build.make CMakeFiles/MySFMLProject.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -151,7 +151,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySFMLProject.dir/build.make CMakeFiles/MySFMLProject.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -162,7 +162,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... MySFMLProject"
+	@echo "... game"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -177,7 +177,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -P /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /Users/mohamedazizgannar/Projects/Personal/sfmlProject/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

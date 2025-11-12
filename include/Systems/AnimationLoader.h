@@ -21,11 +21,21 @@ public:
       } else {
         std::cerr << "No scale found in " << filePath << std::endl;
       }
+      if (root["offsetX"]) {
+        config.offsetX = root["offsetX"].as<int>();
+      } else {
+        std::cerr << "No offsetX found in " << filePath << std::endl;
+      }
+      if (root["offsetY"]) {
+        config.offsetY = root["offsetY"].as<int>();
+      } else {
+        std::cerr << "No offsetY found in " << filePath << std::endl;
+      }
       if (root["animations"]) {
         YAML::Node animations = root["animations"];
         for (auto it = animations.begin(); it != animations.end(); ++it) {
           std::string animName = it->first.as<std::string>();
-          YAML::Node animNode = it->second; 
+          YAML::Node animNode = it->second;
 
           AnimationData animData;
 
@@ -36,6 +46,8 @@ public:
           animData.frameWidth = animNode["frameWidth"].as<int>();
           animData.frameHeight = animNode["frameHeight"].as<int>();
           animData.isLockable = animNode["isLockable"].as<bool>();
+          animData.offsetX = animNode["offsetX"].as<int>();
+          animData.offsetY = animNode["offsetY"].as<int>();
 
           config.animations[animName] = animData;
         }
@@ -49,8 +61,10 @@ public:
     }
     return config;
   }
-  std::unordered_map<std::string, EntityAnimConfig>
-  static loadALlAnimsFromFolder(const std::string &directoryPath) {
+  std::unordered_map<
+      std::string,
+      EntityAnimConfig> static loadALlAnimsFromFolder(const std::string
+                                                          &directoryPath) {
     std::unordered_map<std::string, EntityAnimConfig> allConfigs;
     try {
       if (!std::filesystem::exists(directoryPath)) {

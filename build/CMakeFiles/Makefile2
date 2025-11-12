@@ -54,20 +54,20 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject
+CMAKE_SOURCE_DIR = /Users/mohamedazizgannar/Projects/Personal/sfmlProject
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/build
+CMAKE_BINARY_DIR = /Users/mohamedazizgannar/Projects/Personal/sfmlProject/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/MySFMLProject.dir/all
+all: CMakeFiles/game.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/MySFMLProject.dir/codegen
+codegen: CMakeFiles/game.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -75,40 +75,40 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/MySFMLProject.dir/clean
+clean: CMakeFiles/game.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/MySFMLProject.dir
+# Target rules for target CMakeFiles/game.dir
 
 # All Build rule for target.
-CMakeFiles/MySFMLProject.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySFMLProject.dir/build.make CMakeFiles/MySFMLProject.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySFMLProject.dir/build.make CMakeFiles/MySFMLProject.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/build/CMakeFiles --progress-num=1,2 "Built target MySFMLProject"
-.PHONY : CMakeFiles/MySFMLProject.dir/all
+CMakeFiles/game.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/mohamedazizgannar/Projects/Personal/sfmlProject/build/CMakeFiles --progress-num=1,2 "Built target game"
+.PHONY : CMakeFiles/game.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/MySFMLProject.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MySFMLProject.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/build/CMakeFiles 0
-.PHONY : CMakeFiles/MySFMLProject.dir/rule
+CMakeFiles/game.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mohamedazizgannar/Projects/Personal/sfmlProject/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/game.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mohamedazizgannar/Projects/Personal/sfmlProject/build/CMakeFiles 0
+.PHONY : CMakeFiles/game.dir/rule
 
 # Convenience name for target.
-MySFMLProject: CMakeFiles/MySFMLProject.dir/rule
-.PHONY : MySFMLProject
+game: CMakeFiles/game.dir/rule
+.PHONY : game
 
 # codegen rule for target.
-CMakeFiles/MySFMLProject.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySFMLProject.dir/build.make CMakeFiles/MySFMLProject.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/build/CMakeFiles --progress-num=1,2 "Finished codegen for target MySFMLProject"
-.PHONY : CMakeFiles/MySFMLProject.dir/codegen
+CMakeFiles/game.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/mohamedazizgannar/Projects/Personal/sfmlProject/build/CMakeFiles --progress-num=1,2 "Finished codegen for target game"
+.PHONY : CMakeFiles/game.dir/codegen
 
 # clean rule for target.
-CMakeFiles/MySFMLProject.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MySFMLProject.dir/build.make CMakeFiles/MySFMLProject.dir/clean
-.PHONY : CMakeFiles/MySFMLProject.dir/clean
+CMakeFiles/game.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/clean
+.PHONY : CMakeFiles/game.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
@@ -117,7 +117,7 @@ CMakeFiles/MySFMLProject.dir/clean:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -P /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /Users/mohamedazizgannar/Projects/Personal/sfmlProject/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

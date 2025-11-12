@@ -1,2 +1,2 @@
-# Empty dependencies file for MySFMLProject.
+# Empty dependencies file for game.
 # This may be replaced when dependencies are built.

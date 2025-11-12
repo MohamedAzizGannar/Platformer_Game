@@ -41,10 +41,10 @@ struct Dash {
   bool canDash = true;
   bool isDashing = false;
   float dashTimer = 0.f;
-  float cooldownTimer = 0.f;
-  float dashCooldown = .5f;
+  float cooldownTimer = 1.f;
+  float dashCooldown = 1.f;
   sf::Vector2f dashDirection{0.f, 0.f};
-  Dash(float force = 700.f, float duration = 0.12f)
+  Dash(float force = 1500.f, float duration = 0.18f)
       : dashForce(force), dashDuration(duration) {}
 };
 struct Health {
@@ -93,7 +93,7 @@ struct Sprite {
   const sf::Texture *texture;
   sf::Sprite sprite;
   sf::IntRect rect;
-  float scale ;
+  float scale;
   Sprite(const sf::Texture &tex, float scale = 2.f)
       : texture(&tex), sprite(*texture), scale(scale) {
     sprite.setTexture(*texture, true);
@@ -117,6 +117,7 @@ struct AnimationData {
   float frameTime;
   bool isLockable = false;
   int scale;
+  int offsetX, offsetY;
 };
 struct Animation {
   std::string currentAnimation;
@@ -129,4 +130,5 @@ struct EntityAnimConfig {
   std::string texturePath;
   std::unordered_map<std::string, AnimationData> animations;
   float scale;
+  int offsetX, offsetY;
 };

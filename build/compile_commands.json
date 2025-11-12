@@ -1,8 +1,8 @@
 [
 {
-  "directory": "/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/build",
-  "command": "/usr/bin/c++  -I/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include -isystem /opt/homebrew/include -std=c++17 -arch arm64 -Wall -Wextra -Wpedantic -o CMakeFiles/MySFMLProject.dir/src/main.cpp.o -c /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/src/main.cpp",
-  "file": "/Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/src/main.cpp",
-  "output": "CMakeFiles/MySFMLProject.dir/src/main.cpp.o"
+  "directory": "/Users/mohamedazizgannar/Projects/Personal/sfmlProject/build",
+  "command": "/usr/bin/c++  -I/Users/mohamedazizgannar/Projects/Personal/sfmlProject/include -isystem /opt/homebrew/include -std=c++17 -arch arm64 -Wall -Wextra -Wpedantic -o CMakeFiles/game.dir/src/main.cpp.o -c /Users/mohamedazizgannar/Projects/Personal/sfmlProject/src/main.cpp",
+  "file": "/Users/mohamedazizgannar/Projects/Personal/sfmlProject/src/main.cpp",
+  "output": "CMakeFiles/game.dir/src/main.cpp.o"
 }
 ]

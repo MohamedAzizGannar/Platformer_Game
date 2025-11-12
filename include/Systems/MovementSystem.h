@@ -20,8 +20,6 @@ public:
       vel->x = std::clamp(vel->x, -entity.movement->maxSpeed,
                           entity.movement->maxSpeed);
 
-      vel->y = std::clamp(vel->y, -entity.movement->maxSpeed,
-                          entity.movement->maxSpeed);
     } else {
       vel->x *= std::max(0.f, 1.f - mov.value().friction * dt);
     }

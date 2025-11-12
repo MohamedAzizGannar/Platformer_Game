@@ -1,5 +1,5 @@
 texture: "../assets/sprites/soldiers/Soldier.png"
-scale : 2.
+scale : 5.
 animations:
   idle:
     frameCount : 6
@@ -9,28 +9,36 @@ animations:
     startY : 0
     frameTime : 0.2
     isLockable : false
+    offsetX : 80
+    offsetY : 80
   walk:
     frameCount : 8
     frameWidth : 100
     frameHeight : 100
     startX : 0
     startY : 100
-    frameTime : 0.2
+    frameTime : 0.1
     isLockable : false
+    offsetX : 80
+    offsetY : 80
   attack:
     frameCount : 6
     frameWidth: 100
     frameHeight : 100
     startX : 0
     startY : 200
-    frameTime : 0.08
+    frameTime : 0.06
     isLockable : true 
+    offsetX : 70
+    offsetY : 80 
   shoot:
     frameCount : 9
     frameWidth: 100
     frameHeight : 100
     startX : 0
     startY : 400
-    frameTime : 0.08
+    frameTime : 0.06
     isLockable : true
+    offsetX : 70
+    offsetY : 80
 

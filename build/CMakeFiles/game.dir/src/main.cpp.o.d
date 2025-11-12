@@ -1,6 +1,6 @@
-CMakeFiles/MySFMLProject.dir/src/main.cpp.o: \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/src/main.cpp \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Entity.h \
+CMakeFiles/game.dir/src/main.cpp.o: \
+  /Users/mohamedazizgannar/Projects/Personal/sfmlProject/src/main.cpp \
+  /Users/mohamedazizgannar/Projects/Personal/sfmlProject/include/Entity.h \
   /opt/homebrew/include/SFML/Graphics.hpp \
   /opt/homebrew/include/SFML/Graphics/BlendMode.hpp \
   /opt/homebrew/include/SFML/Graphics/Export.hpp \
@@ -896,10 +896,10 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: \
   /opt/homebrew/include/SFML/System/InputStream.hpp \
   /opt/homebrew/include/SFML/System/MemoryInputStream.hpp \
   /opt/homebrew/include/SFML/System/Sleep.hpp \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Components/Components.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/GameManager.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/AnimationLoader.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/InputSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal/sfmlProject/include/Components/Components.h \
+  /Users/mohamedazizgannar/Projects/Personal/sfmlProject/include/GameManager.h \
+  /Users/mohamedazizgannar/Projects/Personal/sfmlProject/include/Systems/AnimationLoader.h \
+  /Users/mohamedazizgannar/Projects/Personal/sfmlProject/include/Systems/InputSystem.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /opt/homebrew/include/yaml-cpp/yaml.h \
   /opt/homebrew/include/yaml-cpp/parser.h \
@@ -938,10 +938,10 @@ CMakeFiles/MySFMLProject.dir/src/main.cpp.o: \
   /opt/homebrew/include/yaml-cpp/node/detail/impl.h \
   /opt/homebrew/include/yaml-cpp/node/parse.h \
   /opt/homebrew/include/yaml-cpp/node/emit.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/AnimationSystems.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/CollisionSystem.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/DashSystem.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/GroundCheckSystem.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/JumpSystem.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/MovementSystem.h \
-  /Users/mohamedazizgannar/Projects/Personal_Projects/sfmlProject/include/Systems/RenderSystem.h
+  /Users/mohamedazizgannar/Projects/Personal/sfmlProject/include/Systems/AnimationSystems.h \
+  /Users/mohamedazizgannar/Projects/Personal/sfmlProject/include/Systems/CollisionSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal/sfmlProject/include/Systems/DashSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal/sfmlProject/include/Systems/GroundCheckSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal/sfmlProject/include/Systems/JumpSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal/sfmlProject/include/Systems/MovementSystem.h \
+  /Users/mohamedazizgannar/Projects/Personal/sfmlProject/include/Systems/RenderSystem.h
